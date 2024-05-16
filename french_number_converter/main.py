@@ -60,10 +60,10 @@ def convert_tens_to_french(n):
     if tens in [7, 9]:
         if tens == 7 and below_ten == 1:
             return "soixante-et-onze"
-        return "-".join(filter(None, [number_to_french[tens * 10 - 10], convert_to_french(below_ten + 10)]))
+        return "-".join([number_to_french[tens * 10 - 10], convert_to_french(below_ten + 10)])
     elif below_ten == 1 and tens != 8:
         return f"{number_to_french[tens * 10]}-et-{number_to_french[below_ten]}"
-    return "-".join(filter(None, [number_to_french[tens * 10], number_to_french[below_ten]]))
+    return "-".join([number_to_french[tens * 10], number_to_french[below_ten]])
 
 
 def convert_hundreds_to_french(n):
