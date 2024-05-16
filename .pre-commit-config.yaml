@@ -1,0 +1,29 @@
+repos:
+  # handles black isort all the good stuff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.4.2
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-added-large-files
+        name: Check for added large files
+        description: Prevent giant files from being committed
+        entry: check-added-large-files
+        language: python
+        types: [file]
+        args: ["--maxkb=4000"]
+      - id: check-case-conflict
+      - id: forbid-new-submodules
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: detect-private-key
